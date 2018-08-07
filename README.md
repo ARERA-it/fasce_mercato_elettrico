@@ -32,11 +32,13 @@ Get the 'fascia oraria' based from ARERA definitions (F1, F2 or F3):
 ```ruby
 dt = Time.new(2018,8,7,9)
 FasceME.fascia_arera(dt).to_s # => "F1"
+FasceME.fascia_arera(dt).to_i # => 1
 ```
 Get the 'fascia oraria' based from GME definitions (Peak or Off-Peak):
 ```ruby
 dt = Time.new(2018,8,7,9)
-FasceME.fascia_gme(dt).to_s # => "1"
+FasceME.fascia_gme(dt).to_s # => "Peak"
+FasceME.fascia_gme(dt).to_i # => 1
 ```
 
 ## Development
