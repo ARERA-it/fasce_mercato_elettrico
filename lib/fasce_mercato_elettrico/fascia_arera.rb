@@ -2,7 +2,7 @@ require 'singleton'
 
 module FasceMercatoElettrico
 
-  module FasciaAreraMercatoElettrico
+  module ARERA
     class FasciaArera
       include Singleton
     end

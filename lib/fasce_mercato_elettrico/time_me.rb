@@ -1,16 +1,15 @@
 module FasceMercatoElettrico
 
   module TimeMercatoElettrico
-    module ClassMethods
+    module InstanceMethods
 
       # https://www.arera.it/it/schede/C/faq-fascenondom.htm
       # https://www.arera.it/it/docs/06/181-06.htm
-
-      def fascia_arera(dt)
-        d = dt.to_date
-        h = dt.hour
+      def fascia_arera
+        d = to_date
+        h = hour
         case
-        when holiday?(d)
+        when d.holiday_in_italy?
           f3
 
         when d.saturday?
@@ -43,12 +42,11 @@ module FasceMercatoElettrico
       end
 
 
-
-      def fascia_gme(dt)
-        d = dt.to_date
-        h = dt.hour
+      def fascia_gme
+        d = to_date
+        h = hour
         case
-        when holiday?(d)
+        when d.holiday_in_italy?
           off_peak
 
         when d.saturday?
@@ -73,7 +71,7 @@ module FasceMercatoElettrico
     end
 
     def self.included(receiver)
-      receiver.extend ClassMethods
+      receiver.send :include, InstanceMethods
     end
   end
 end

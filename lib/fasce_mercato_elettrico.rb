@@ -7,9 +7,13 @@ require "fasce_mercato_elettrico/time_me"
 require "fasce_mercato_elettrico/fascia_arera"
 require "fasce_mercato_elettrico/fascia_gme"
 
-class FasceME
+include FasceMercatoElettrico::ARERA
+include FasceMercatoElettrico::GME
+
+class Date
   include FasceMercatoElettrico::DateMercatoElettrico
-  include FasceMercatoElettrico::TimeMercatoElettrico
 end
 
-include FasceMercatoElettrico::FasciaAreraMercatoElettrico
+class Time
+  include FasceMercatoElettrico::TimeMercatoElettrico
+end

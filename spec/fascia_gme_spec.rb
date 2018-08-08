@@ -8,7 +8,7 @@ RSpec.describe "FasciaGME" do
       expect(Peak.instance==OffPeak.instance).to be(false)
     end
     it "get string" do
-      expect(Peak.instance.to_s).to eq("Peak")
+      expect(Peak.instance.to_s).to eq("P")
     end
     it "get integer" do
       expect(Peak.instance.to_i).to eq(1)
@@ -23,7 +23,7 @@ RSpec.describe "FasciaGME" do
       expect(OffPeak.instance==Peak.instance).to be(false)
     end
     it "get string" do
-      expect(OffPeak.instance.to_s).to eq("OffPeak")
+      expect(OffPeak.instance.to_s).to eq("OP")
     end
     it "get integer" do
       expect(OffPeak.instance.to_i).to eq(0)

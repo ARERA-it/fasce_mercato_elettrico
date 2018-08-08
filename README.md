@@ -25,20 +25,22 @@ Or install it yourself as:
 Check if a date fall in holiday (or Sunday):
 ```ruby
 christmas_day_2018 = Date.civil(2018, 12, 25)
-FasceME.holiday? christmas_day_2018 # => true
+christmas_day_2018.holiday_in_italy? # => true
 ```
 
 Get the 'fascia oraria' based from ARERA definitions (F1, F2 or F3):
 ```ruby
 dt = Time.new(2018,8,7,9)
-FasceME.fascia_arera(dt).to_s # => "F1"
-FasceME.fascia_arera(dt).to_i # => 1
+dt.fascia_arera               # => #<FasceMercatoElettrico::ARERA::F1:0x00007f7fcf010760>
+dt.fascia_arera.to_s # => "F1"
+dt.fascia_arera.to_i # => 1
 ```
 Get the 'fascia oraria' based from GME definitions (Peak or Off-Peak):
 ```ruby
 dt = Time.new(2018,8,7,9)
-FasceME.fascia_gme(dt).to_s # => "Peak"
-FasceME.fascia_gme(dt).to_i # => 1
+dt.fascia_gme
+dt.fascia_gme.to_s # => "P"
+dt.fascia_gme.to_i # => 1
 ```
 
 ## Development
@@ -49,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/arera-it/fasce_mercato_elettrico. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ARERA-it/fasce_mercato_elettrico. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -57,4 +59,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the FasceMercatoElettrico project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/arera-it/fasce_mercato_elettrico/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the FasceMercatoElettrico project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/ARERA-it/fasce_mercato_elettrico/blob/master/CODE_OF_CONDUCT.md).

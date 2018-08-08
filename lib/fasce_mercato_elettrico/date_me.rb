@@ -1,12 +1,12 @@
 module FasceMercatoElettrico
   module DateMercatoElettrico
-    module ClassMethods
 
-      def holiday?(date)
+    module InstanceMethods
+      def holiday_in_italy?
         case
-        when date.wday==0
+        when wday==0
           true
-        when Holidays.on(date, :it).any?
+        when Holidays.on(self, :it).any?
           true
         else
           false
@@ -15,7 +15,7 @@ module FasceMercatoElettrico
     end
 
     def self.included(receiver)
-      receiver.extend ClassMethods
+      receiver.send :include, InstanceMethods
     end
   end
 end
