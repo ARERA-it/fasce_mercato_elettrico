@@ -31,16 +31,16 @@ christmas_day_2018.holiday_in_italy? # => true
 Get the 'fascia oraria' based from ARERA definitions (F1, F2 or F3):
 ```ruby
 dt = Time.new(2018,8,7,9)
-dt.fascia_arera               # => #<FasceMercatoElettrico::ARERA::F1:0x00007f7fcf010760>
-dt.fascia_arera.to_s # => "F1"
-dt.fascia_arera.to_i # => 1
+dt.fascia_arera       # => #<FasceMercatoElettrico::ARERA::F1:0x00007f7fcf010760>
+dt.fascia_arera.to_s  # => "F1"
+dt.fascia_arera.to_i  # => 1
 ```
 Get the 'fascia oraria' based from GME definitions (Peak or Off-Peak):
 ```ruby
 dt = Time.new(2018,8,7,9)
-dt.fascia_gme
-dt.fascia_gme.to_s # => "P"
-dt.fascia_gme.to_i # => 1
+dt.fascia_gme        # => #<FasceMercatoElettrico::GME::Peak:0x00007f7fd00e5540>
+dt.fascia_gme.to_s   # => "P"
+dt.fascia_gme.to_i   # => 1
 ```
 
 ## Development
