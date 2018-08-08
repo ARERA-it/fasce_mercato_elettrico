@@ -68,6 +68,11 @@ module FasceMercatoElettrico
       def off_peak
         OffPeak.instance
       end
+
+
+      def holiday_in_italy?
+        to_date.holiday_in_italy?
+      end
     end
 
     def self.included(receiver)

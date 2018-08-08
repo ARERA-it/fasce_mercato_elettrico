@@ -1,5 +1,10 @@
 RSpec.describe "TimeME" do
 
+  it "check holiday_in_italy" do
+    t = Time.new(2018,1,1,15)
+    expect(t.holiday_in_italy?).to be(true)
+  end
+
   context "Fascia ARERA" do
     let(:holiday_int_arr){Array.new(24,3)}
     let(:saturday_int_arr){[3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3]}

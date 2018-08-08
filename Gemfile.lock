@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fasce_mercato_elettrico (0.1.0)
+    fasce_mercato_elettrico (0.2.0)
       holidays (~> 6.4)
 
 GEM
